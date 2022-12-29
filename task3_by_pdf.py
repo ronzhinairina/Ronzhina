@@ -66,6 +66,7 @@ class Input:
     def __init__(self):
         self.file_name = input("Введите название файла: ")
         self.profession = input("Введите название профессии: ")
+        self.reportType = input("Вакансии или Статистика: ")
         self.fields = []
 
     def csv_parser(self):
@@ -280,7 +281,13 @@ data = input_set.csv_parser()
 years = GraphData(data, "years")
 prof_years = GraphData(data, "years", input_set.profession)
 areas = GraphData(data, "areas")
-pdf_report = PdfReport(years.get_graph_data()[0], years.get_graph_data()[1],
+if input_set.reportType == "Вакансии":
+        reportExcel = ExcelReport(Side(style="thin", color="000000"), Font(bold=True))
+        reportExcel.generate_excel([years.get_graph_data()[0], years.get_graph_data()[1],
+                                    prof_years.get_graph_data()[0], prof_years.get_graph_data()[1],
+                                    areas.get_graph_data()[0], areas.get_graph_data()[1]])
+elif input_set.reportType == "Статистика":
+    pdf_report = PdfReport(years.get_graph_data()[0], years.get_graph_data()[1],
                                 prof_years.get_graph_data()[0], prof_years.get_graph_data()[1],
                                 areas.get_graph_data()[0], areas.get_graph_data()[1])
-pdf_report.get_pdf_report()
+    pdf_report.get_pdf_report()
