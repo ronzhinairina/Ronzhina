@@ -13,6 +13,7 @@ import matplotlib.pyplot as plt
 from matplotlib.pyplot import figure
 
 
+#куда пропала строка?
 class PdfReport:
     def __init__(self, years_salary: dict, years_count: dict,
                  prof_salary: dict, prof_count: dict,
