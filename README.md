@@ -23,6 +23,7 @@
 ![image](https://user-images.githubusercontent.com/105503323/209990934-2178eca1-5646-4dfd-a292-53c41a2c2d7b.png)
 
 Задание 3.2.2.Результаты профилирования мультипроцессорности:
+
   Без мультипроцессорности:
   ![image](https://user-images.githubusercontent.com/105503323/209991570-0b2244d1-2ddd-4382-9cf8-5fe32623aaa7.png)
 
